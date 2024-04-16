@@ -7,29 +7,25 @@ import clsx from "clsx";
 
 export default function SearchMobile() {
   const [showSearch, setShowSearch] = React.useState(false);
-  console.log(showSearch);
 
   return (
     <div className="sm:hidden">
       <button
         onClick={() => setShowSearch(!showSearch)}
-        className={clsx("p-2 rounded transition-colors duration-300", {
-          "bg-red-500": showSearch,
-          "bg-red-200": !showSearch,
-        })}
+        className={clsx("p-2 rounded transition-colors duration-300")}
       >
         <MagnifyingGlassIcon className="w-5 " />
       </button>
 
       <Search
         className={clsx(
-          "absolute left-0  w-11/12 mx-4 transition-all duration-500",
+          "absolute left-0  w-11/12 mx-4 transition-all duration-300 text-black",
           {
-            "top-14 z-10 opacity-100 text-white": showSearch,
+            "top-16 z-10 opacity-100 text-white": showSearch,
             "-top-full -z-10 opacity-0": !showSearch,
           }
         )}
-        placeholder=""
+        placeholder="search for ..."
       />
     </div>
   );

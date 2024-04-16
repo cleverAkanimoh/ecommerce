@@ -16,9 +16,6 @@
 //   initialState,
 //   reducers: {
 //     toggle: (state) => !state,
-//     incrementByAmount: (state, action: PayloadAction<boolean>) => {
-//       state.isClicked = action.payload;
-//     },
 //   },
 // });
 
