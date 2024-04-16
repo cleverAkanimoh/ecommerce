@@ -8,6 +8,16 @@ export function Main({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function Section({ children }: { children: React.ReactNode }) {
-  return <section className="container flex items-center">{children}</section>;
+export function Section({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <section className={`${className} container flex items-center`}>
+      {children}
+    </section>
+  );
 }

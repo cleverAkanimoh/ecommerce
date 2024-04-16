@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import { ThemeProvider } from "@/components/providers/theme-provider";
 import "./globals.css";
 import { rubik } from "@/components/font";
 import { Footer, Navbar } from "@/components/ui";
+import Providers from "@/components/providers/provider";
 
 export const metadata: Metadata = {
   title:
@@ -19,16 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={rubik.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          // enableSystem
-          disableTransitionOnChange
+        <Providers
         >
           <Navbar />
           {children}
           <Footer />
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );
