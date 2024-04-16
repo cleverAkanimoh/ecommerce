@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 import "./globals.css";
-import { inter } from "@/components/font";
-
-
+import { rubik } from "@/components/font";
 
 export const metadata: Metadata = {
   title:
@@ -19,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={rubik.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
