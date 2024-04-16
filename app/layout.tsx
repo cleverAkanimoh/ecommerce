@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import "./globals.css";
 import { rubik } from "@/components/font";
+import { Footer, Navbar } from "@/components/ui";
 
 export const metadata: Metadata = {
   title:
@@ -24,7 +25,9 @@ export default function RootLayout({
           // enableSystem
           disableTransitionOnChange
         >
+          <Navbar />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
