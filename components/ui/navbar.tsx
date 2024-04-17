@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Section } from "./html-tags";
 import Link from "next/link";
 import NavLinksWrapper from "./navigation/navlinks-wrapper";
@@ -18,11 +18,13 @@ export default function Navbar() {
         <NavLinksWrapper className="hidden md:flex gap-4 items-center justify-center" />
 
         <div className="flex gap-6 max-[400px]:gap-2 items-center justify-center">
-          <SearchMobile />
-          <Search
-            placeholder="search for..."
-            className="hidden sm:inline-block"
-          />
+          <Suspense>
+            <SearchMobile />
+            <Search
+              placeholder="search for..."
+              className="hidden sm:inline-block"
+            />
+          </Suspense>
           <HeartIcon className="w-5 cursor-pointer" />
           <ShoppingCart />
         </div>
